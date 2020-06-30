@@ -1,0 +1,40 @@
+.card {
+    border: 1px solid #e2e2e2;
+    box-shadow: none;
+    margin-bottom: 30px;
+}
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    background-color: #fff;
+    background-clip: border-box;
+    border-radius: .25rem;
+}
+.card .card-body {
+  padding: 20px;
+}
+.card-body {
+  flex: 1 1 auto;
+}
+.form-group {
+  margin-bottom: 1rem;
+}
+.mat-form-field {
+  display: block;
+  position: relative;
+  flex: auto;
+  min-width: 0;
+  width: 500px;
+}
+.mat-button{
+  background-color:#348cd4 ;
+  color:#fff;
+  margin: 2px;
+}
+.add-btn{
+  background-color:#90EE90 ;
+  color:#fff;
+  margin: 2px;
+}

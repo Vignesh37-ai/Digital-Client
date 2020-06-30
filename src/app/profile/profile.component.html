@@ -1,0 +1,64 @@
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-body">
+                <form id="basic-form" action="#">
+                    <label class="col-lg-12 control-label "><h2><b>Profile</b></h2></label>
+                    <div class="form-group row">
+                        <label class="col-lg-3 control-label " for="fullname"><i class="fa fa-user"></i><b> Full Name *</b></label>
+                        <div class="col-lg-9">
+                            <mat-form-field class="example-full-width">
+                                <mat-label>Full Name</mat-label>
+                                <input matInput placeholder="" value="" required>
+                              </mat-form-field>
+                        </div>
+                    </div><div class="form-group row">
+                        <label class="col-lg-3 control-label " for="email"><i class="fa fa-envelope"></i><b> Email *</b></label>
+                        <div class="col-lg-9">
+                            <mat-form-field class="example-full-width">
+                                <mat-label>Email</mat-label>
+                                <input matInput [formControl]="emailFormControl" [errorStateMatcher]="matcher"
+                                       placeholder="Ex. pat@example.com">
+                                <mat-hint>Errors appear instantly!</mat-hint>
+                                <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+                                  Please enter a valid email address
+                                </mat-error>
+                                <mat-error *ngIf="emailFormControl.hasError('required')">
+                                  Email is <strong>required</strong>
+                                </mat-error>
+                              </mat-form-field>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-lg-3 control-label " for="phone-no"><i class="fa fa-phone"></i><b> Phone no: *</b></label>
+                        <div class="col-lg-9">
+                            <mat-form-field class="example-full-width">
+                                <mat-label>Phone no:</mat-label>
+                                <input matInput type="number" placeholder="" value="" required>
+                              </mat-form-field>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-lg-3 control-label " for="profile-photo"><i class="fa fa-image"></i><b> Profile Photo *</b></label>
+                        <div class="col-lg-9">
+                            <mat-form-field class="example-full-width">
+                                <mat-label>Profile Photo </mat-label>
+                                <input matInput type="text" placeholder="" value="" required>
+                              </mat-form-field> 
+                              <button mat-raised-button color="primary"><span class="icon-span-filestyle fa fa-folder-open">
+                            </span>Choose file</button> 
+                                </div>            
+                 </div>
+                 <div class="form-group row">
+                    <label class="col-lg-12 control-label "><b>(*) Mandatory</b></label>
+                </div>
+                 <div class="form-group profile-btn text-right m-t-10">
+                    <div class="col-12">
+                        <button mat-raised-button color="primary">Update</button>
+                    </div>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

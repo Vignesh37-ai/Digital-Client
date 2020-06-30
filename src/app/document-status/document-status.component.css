@@ -1,0 +1,175 @@
+
+  /* Data table editable */
+  .add-edit-table td,
+  .add-edit-table th {
+    vertical-align: middle !important;
+  }
+  .add-edit-table td {
+    border: 0 !important;
+  }
+  #datatable-editable .actions a {
+    padding: 5px;
+  }
+  #datatable-editable .form-control {
+    background-color: #ffffff;
+    width: 100%;
+  }
+
+  #datatable td {
+    font-weight: normal;
+  }
+  .modal-block {
+    background: transparent;
+    margin: 40px auto;
+    max-width: 600px;
+    padding: 0;
+    position: relative;
+    text-align: left;
+  }
+  .dt-buttons {
+    float: left;
+  }
+  div#datatable-buttons_info {
+    float: left;
+  }
+  table.dataTable thead th {
+    position: relative;
+    background-image: none !important;
+  }
+  table.dataTable thead th.sorting:after,
+  table.dataTable thead th.sorting_asc:after,
+  table.dataTable thead th.sorting_desc:after {
+    position: absolute;
+    top: 7px;
+    right: 8px;
+    display: block;
+    font-family: FontAwesome;
+  }
+  table.dataTable thead th.sorting:after {
+    content: "\f0dc";
+    padding-top: 0.12em;
+  }
+  table.dataTable thead th.sorting_asc:after {
+    content: "\f0de";
+  }
+  table.dataTable thead th.sorting_desc:after {
+    content: "\f0dd";
+  }
+  /* Tablesaw Tables */
+  .tablesaw thead {
+    background: rgba(243, 243, 243, 0.7);
+    background-image: none;
+    border: none;
+  }
+  .tablesaw thead th {
+    text-shadow: none;
+    letter-spacing: 0.06em;
+  }
+  .tablesaw thead tr:first-child th {
+    font-weight: 600;
+    border: none;
+    font-family: 'Source Sans Pro', sans-serif;
+  }
+  .tablesaw td {
+    border-top: 1px solid rgba(243, 243, 243, 0.7) !important;
+  }
+  .tablesaw td,
+  .tablesaw tbody th {
+    font-size: inherit;
+    line-height: inherit;
+    padding: 10px !important;
+  }
+  .tablesaw-stack tbody tr,
+  .tablesaw tbody tr {
+    border-bottom: none;
+  }
+  .tablesaw-sortable .tablesaw-sortable-head.tablesaw-sortable-ascending button:after,
+  .tablesaw-sortable .tablesaw-sortable-head.tablesaw-sortable-descending button:after {
+    font-family: FontAwesome;
+    font-size: 10px;
+  }
+  .tablesaw-sortable .tablesaw-sortable-head.tablesaw-sortable-ascending button:after {
+    content: "\f176";
+  }
+  .tablesaw-sortable .tablesaw-sortable-head.tablesaw-sortable-descending button:after {
+    content: "\f175";
+  }
+  .tablesaw-bar .btn-select.btn-small:after,
+  .tablesaw-bar .btn-select.btn-micro:after {
+    font-size: 8px;
+    padding-right: 10px;
+  }
+  .tablesaw-swipe .tablesaw-cell-persist {
+    box-shadow: none;
+  }
+  .tablesaw-enhanced .tablesaw-bar .btn {
+    text-shadow: none;
+    background-image: none;
+  }
+  .tablesaw-enhanced .tablesaw-bar .btn.btn-select:hover {
+    background: #ffffff;
+  }
+  /* Table colored */
+  .table-colored thead th {
+    color: #ffffff;
+  }
+  .table-colored.table-inverse thead th {
+    background-color: #3b3e47;
+  }
+  /* Table colored-bordered */
+  .table-colored-bordered thead th {
+    border-bottom: 0 !important;
+    color: #ffffff;
+  }
+  .table-colored-bordered.table-bordered-inverse {
+    border: 2px solid #3b3e47;
+  }
+  .table-colored-bordered.table-bordered-inverse thead th {
+    background-color: #3b3e47;
+  }
+  
+  /* Table full colored */
+  .table-colored-full {
+    color: #ffffff;
+  }
+  .table-colored-full thead th {
+    border-bottom: 0 !important;
+    padding: 10px !important;
+  }
+  .table-colored-full tbody td,
+  .table-colored-full tbody th {
+    border: 0 !important;
+  }
+  .table-colored-full.table-full-inverse {
+    background-color: rgba(59, 62, 71, 0.8);
+  }
+  .table-colored-full.table-full-inverse thead th {
+    background-color: #3b3e47;
+  }
+  .table-colored-full.table-full-inverse tbody tr:hover {
+    background-color: #3b3e47;
+  }
+  
+  /* Seach */
+  .app-search {
+    position: relative;
+  }
+  .app-search a {
+    position: absolute;
+    top: 7px;
+    right: 26px;
+    color: rgba(152, 166, 173, 0.7);
+  }
+  label {
+    text-align: left;
+    display: inline-block;
+    margin-bottom: .5rem;
+}
+  .pagination {
+    float:right;
+    display: flex;
+    padding-left: 0;
+    list-style: none;
+    border-radius: .25rem;
+    float: right;
+}

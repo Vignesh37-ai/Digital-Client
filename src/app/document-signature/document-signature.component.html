@@ -1,0 +1,158 @@
+<div class="row">
+    <div class="col-md-12">
+    <div class="card">
+                <div class="card-body">
+                    <h4 class="m-t-0 header-title"><b>Digital Document Signature</b></h4>
+     <!--Review session start-->  
+     <mat-horizontal-stepper #stepper>
+        <mat-step [stepControl]="firstFormGroup">
+          <form [formGroup]="firstFormGroup">
+            <ng-template matStepLabel>ADD</ng-template>
+        <h3><b>Add Document</b></h3>
+        <div class="form-group row">
+            <label class="col-lg-3 control-label "><i class="fa fa-file-word-o"></i><b> Upload File *</b></label>
+            <div class="col-lg-9">
+                <mat-form-field class="example-full-width">
+                    <mat-label>Upload File </mat-label>
+                    <input matInput type="text" placeholder="" value="" required>
+                  </mat-form-field> 
+                  <button mat-raised-button color="primary"><span class="icon-span-filestyle fa fa-folder-open">
+                </span>Choose file</button> 
+                    </div>            
+     </div>
+        <div class="form-group row">
+        <label class="col-lg-12 control-label ">(*) Mandatory</label>
+        </div>
+        <div style="text-align:right">
+            <button mat-button matStepperNext btn-md>Next</button>
+          </div>
+          </form>        
+        </mat-step>
+        <mat-step [stepControl]="secondFormGroup">
+        <form [formGroup]="secondFormGroup">
+        <ng-template matStepLabel>SELECT</ng-template>
+        <h3><b>Recipient</b></h3>
+        <mat-card formArrayName="recipient">
+            <mat-card-title>New Recipient</mat-card-title><mat-divider></mat-divider>
+            <div *ngFor="let recipient of secondFormGroup.get('recipient')['controls']; let i=index">
+            <mat-divider *ngIf="secondFormGroup.get('recipient')['controls'].length > 1 && i == 1" ></mat-divider><br>
+            <div [formGroupName]="i"><div fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="3.5%">
+        <div class="form-group row">
+        <label class="col-lg-12 control-label ">(*) Mandatory</label>
+        </div>
+        <div class="form-group row">
+        <label class="col-lg-3 control-label" for="name"><i class="fa fa-pencil" aria-hidden="true"></i><b> Recipient Name *</b></label>
+        <div class="col-lg-9">
+        <mat-form-field class="example-full-width">
+        <mat-label>Recipient Name </mat-label>
+        <input matInput placeholder="" formControlName="RecipientName" required>
+        </mat-form-field>
+        </div>
+        </div>
+        <div class="form-group row">
+        <label class="col-lg-3 control-label"><i class="fa fa-envelope"></i><b> Recipient Email *</b></label>
+        <div class="col-lg-9">
+        <mat-form-field class="example-full-width">
+            <mat-label>Recipient Email</mat-label>
+            <input matInput [formControl]="emailFormControl" [errorStateMatcher]="matcher"
+                   placeholder="Ex. pat@example.com" formControlName="RecipientEmail" >
+            <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+              Please enter a valid email address
+            </mat-error>
+            <mat-error *ngIf="emailFormControl.hasError('required')">
+                Recipient Email is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        </div>
+        <button mat-raised-button color="warn" *ngIf="secondFormGroup.get('recipient')['controls'].length > 1" (click)="removeRecipient(i)"><mat-icon> delete </mat-icon>Delete</button></div></div></div>
+        <mat-divider></mat-divider><mat-card-actions><button class="add-btn" mat-raised-button (click)="addRecipient()"><mat-icon>add box</mat-icon>
+            Add New Recipient
+          </button></mat-card-actions> </mat-card>
+        <div style="text-align:right">
+            <button mat-button matStepperPrevious btn-md>Back</button>
+            <button mat-button matStepperNext btn-md>Next</button>
+          </div>
+        </form>
+        </mat-step>
+        <mat-step [stepControl]="thirdFormGroup">
+            <form [formGroup]="thirdFormGroup">
+        <ng-template matStepLabel>PREPARE</ng-template>
+        <div style="text-align:right">
+            <button mat-button matStepperPrevious btn-md>Back</button>
+            <button mat-button matStepperNext btn-md>Next</button>
+          </div>
+        </form>
+        </mat-step>
+            <mat-step [stepControl]="thirdFormGroup">
+                <form [formGroup]="thirdFormGroup">
+            <ng-template matStepLabel>REVIEW</ng-template>
+            <div class="form-group row">
+                <label class="col-lg-3 control-label"><i class="fa fa-envelope-open"></i><b> Email Subject *</b></label>
+                <div class="col-lg-9">
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Email Subject</mat-label>
+                        <input matInput placeholder="" formControlName="thirdCtrl" required>
+                        </mat-form-field>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-lg-3 control-label"><i class="fa fa-pencil-square-o"></i><b> Email Message *</b></label>
+                <div class="col-lg-9">
+                    <mat-form-field class="example-full-width">
+                    <mat-label>Email Message </mat-label>
+                    <textarea matInput placeholder="" formControlName="thirdCtrl" required></textarea>
+                        </mat-form-field>
+                </div>
+            </div>
+            <h4 class="m-t-0 header-title"><b>List of Recipients</b></h4>
+            <div class="form-group row">
+                <label class="col-lg-3 control-label "><i class="fa fa-pencil"></i><b> Recipients Name *</b></label>
+                <div class="col-lg-9">
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Recipients Name </mat-label>
+                        <input matInput placeholder="" formControlName="thirdCtrl" required>
+                        </mat-form-field>               
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-lg-3 control-label"><i class="fa fa-envelope"></i><b> Recipient Email *</b></label>
+                <div class="col-lg-9">
+                <mat-form-field class="example-full-width">
+                    <mat-label>Recipient Email</mat-label>
+                    <input matInput [formControl]="emailFormControl" [errorStateMatcher]="matcher"
+                           placeholder="Ex. pat@example.com " formControlName="thirdCtrl" required>
+                    <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+                      Please enter a valid email address
+                    </mat-error>
+                    <mat-error *ngIf="emailFormControl.hasError('required')">
+                        Recipient Email is <strong>required</strong>
+                    </mat-error>
+                  </mat-form-field>
+                </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-lg-3 control-label "><i class="fa fa-file-word-o"></i><b> Upload File *</b></label>
+                    <div class="col-lg-9">
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Upload File </mat-label>
+                            <input matInput type="text" placeholder="" value="" required>
+                          </mat-form-field> 
+                          <button mat-raised-button color="primary"><span class="icon-span-filestyle fa fa-folder-open">
+                        </span>Choose file</button> 
+                            </div>            
+             </div>
+             <div class="form-group row">
+                <label class="col-lg-12 control-label "><b>(*) Mandatory</b></label>
+            </div>
+            <div style="text-align:right">
+              <button mat-button matStepperPrevious btn-md >Back</button>
+              <button mat-button mat-raised-button btn-md >Finish</button>
+            </div>
+            </form>
+          </mat-step>
+        </mat-horizontal-stepper>       
+                </div>
+            </div>
+        </div>
+    </div>

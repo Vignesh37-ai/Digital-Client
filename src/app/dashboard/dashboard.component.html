@@ -1,0 +1,35 @@
+<div id="wrapper">
+    <app-header></app-header>
+    <div class="left side-menu" >
+            <!--- Sidemenu -->
+            <div id="sidebar-menu">
+                <!-- Left Menu Start -->
+                <ul class="metismenu list-unstyled in" id="side-menu" style="text-align: left;">
+                    <li class="menu-title"> Navigation </li>
+                    <li>
+                        <a routerLink="status" routerLinkActive="active"><i class="fa fa-desktop" aria-hidden="true"></i><span> Home </span> </a>
+                    </li>
+                    <li>
+                        <a routerLink="signature" routerLinkActive="active"><i class="fa fa-desktop" aria-hidden="true"></i><span> Digital Signature</span> </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- Sidebar -->
+            <div class="clearfix"></div>
+    </div>           <!-- Sidebar -left -->
+    <div class="content-page">
+           <!-- Start content -->
+        <div class="content">
+            <div class="container-fluid">
+               <router-outlet></router-outlet>              <!-- end row -->
+            </div> <!-- container-fluid -->
+        </div> <!-- content -->
+        <footer class="footer">
+            2019 - 2020 © CYBER CONFORMITY.
+        </footer>
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Right content here -->
+    <!-- ============================================================== -->
+</div>
+<!-- END wrapper -->

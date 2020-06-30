@@ -1,0 +1,49 @@
+#wrapper {
+  height: 100%;
+  overflow: hidden;
+  width: 100%;
+}
+.content-page {
+  margin-left: 240px;
+  overflow: hidden;
+}
+
+.content-page .content {
+  padding: 0 15px 10px 15px;
+  margin-top: 70px;
+}
+  .side-menu .waves-effect .waves-ripple {
+    background-color: rgba(52, 140, 212, 0.4);
+  }
+  .side-menu {
+    width: 240px;
+    z-index: 10;
+    background: #ffffff;
+    bottom: 0;
+    margin-top: 0;
+    padding-bottom: 30px;
+    position: fixed;
+    top: 71px;
+    border-right: 1px solid #e6e6e6;
+    color:black;
+}
+  .footer {
+    background-color: #ebebeb;
+    bottom: 0;
+    padding: 19px 30px 20px;
+    position: absolute;
+    right: 0;
+    left: 240px;
+  }
+  .list-unstyled {
+    padding-left: 0;
+    list-style: none;
+}
+.clearfix::after {
+  display: block;
+  clear: both;
+  content: "";
+}
+.clearfix::before {
+  display:none;
+}

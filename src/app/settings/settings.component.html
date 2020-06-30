@@ -1,0 +1,26 @@
+<div class="row justify-content-center">
+    <div class="col-md-12">
+                <div class="card-setting">
+                    <div class="card-body">
+                        <h4 class="m-t-0 header-title"><b>Setting</b>
+                        </h4>
+                        <form id="basic-form" action="#">
+                        <h4 class="title current">Select the type of Signature you want</h4>
+            <div class="form-group">
+                <mat-form-field>
+                    <mat-label>Signature Type </mat-label>
+                    <mat-select [formControl]="signature" multiple>
+                      <mat-option *ngFor="let signature of signatureList" [value]="signature">{{signature}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+    </div>
+    <div class="form-group profile-btn text-right m-t-10">
+        <div class="col-12">
+            <button mat-raised-button color="primary">Update</button>
+        </div>
+    </div>  
+    </form>      
+        </div>
+     </div>
+</div>
+</div>

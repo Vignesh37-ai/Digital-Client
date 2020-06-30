@@ -1,0 +1,30 @@
+<div class="topbar">
+    <div class="topbar-left">
+        <a class="logo">
+            <span><img src="assets/image/logo.png" alt="logo" height="70px"></span>
+        </a>
+    </div>
+    <div class="navbar navbar-default" role="navigation">
+        <div class="container-fluid"><!-- Navbar-left -->
+        <ul class="nav navbar-left">
+        <li><button type="button" class="button-menu-mobile open-left waves-effect">
+                    <i class="fa fa-navicon"></i>
+                </button>
+            </li>
+        </ul><!-- Right(Notification) -->
+        <div class="nav navbar-right"> 
+            <li class="dropdown user-box">
+                <a  class="dropdown-toggle  user-link" (click)="toggleDropdown()">
+                    <img src="assets/image/avatar-1.jpg" alt="user-img" class="rounded-circle user-img"></a>
+                 <ul  [style.display]="isClicked ? 'block' : 'none'" class="dropdown-menu dropdown-menu-right arrow-dropdown-menu arrow-menu-right user-list notify-list">
+                    <li [style.display]="isClicked ? 'block':'none'"><a (click)="toggleDropdown1()" routerLink="profile" routerLinkActive="active" class="dropdown-item"><i class="fa fa-user-circle"></i> Profile </a></li>
+                    <li [style.display]="isClicked ? 'block':'none'"><a (click)="toggleDropdown1()" routerLink="settings" routerLinkActive="active"  class="dropdown-item"><i class="fa fa-cog"></i> Settings </a></li>
+                    <li [style.display]="isClicked? 'block':'none' "><a (click)="toggleDropdown1()" routerLink="lock-screen" routerLinkActive="active" class="dropdown-item"><i class="fa fa-lock"></i> Lock screen </a></li>
+                    <li class="dropdown-divider"></li>
+                    <li [style.display]="isClicked ? 'block':'none'"><a (click)="toggleDropdown1()" routerLink="logout" routerLinkActive="active" class="dropdown-item"><i class="fa fa-power-off"></i> Logout </a></li>
+                </ul>
+            </li>
+        </div> <!-- end navbar-right-->
+    </div><!-- end container-fluid -->
+</div>
+</div>
