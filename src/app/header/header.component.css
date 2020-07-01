@@ -95,11 +95,9 @@
       display: inline-block;
       position: relative;
     }
-    
     .navbar-default .right-menu-item > i {
       font-size: 22px;
     }
-    
     .navbar-default .right-menu-item  {
       position: absolute;
       top: 12px;
@@ -161,5 +159,6 @@
         display: block;
         padding: 10px 15px;
       }
-     
-    
+      .fa fa-navicon:before {
+        content: "\e020";
+    }

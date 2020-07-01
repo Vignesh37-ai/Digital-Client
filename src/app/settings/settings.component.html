@@ -5,15 +5,18 @@
                         <h4 class="m-t-0 header-title"><b>Setting</b>
                         </h4>
                         <form id="basic-form" action="#">
-                        <h4 class="title current">Select the type of Signature you want</h4>
-            <div class="form-group">
+                            <h4 class="title current">Select the type of Signature you want</h4>
+           <mat-card>
+               <mat-card-title></mat-card-title> 
+               <div class="form-group">
                 <mat-form-field>
-                    <mat-label>Signature Type </mat-label>
+                    <mat-label>Signature Type</mat-label>
                     <mat-select [formControl]="signature" multiple>
                       <mat-option *ngFor="let signature of signatureList" [value]="signature">{{signature}}</mat-option>
                     </mat-select>
                 </mat-form-field>
     </div>
+</mat-card>
     <div class="form-group profile-btn text-right m-t-10">
         <div class="col-12">
             <button mat-raised-button color="primary">Update</button>

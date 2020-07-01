@@ -19,6 +19,7 @@ export class DocumentSignatureComponent implements OnInit {
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
   thirdFormGroup: FormGroup;
+  filename:string = 'Uploaded Filename';
 
   constructor(private _formBuilder: FormBuilder) { }
   emailFormControl = new FormControl('', [
